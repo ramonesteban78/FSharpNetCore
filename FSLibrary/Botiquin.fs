@@ -12,7 +12,7 @@ module Scrapping =
         engine |> Option.defaultValue Engines.getDefault
        
 
-    let getLinksFromSearch url = 
+    let private getLinksFromSearch url = 
         async {
             let! googleResult = HtmlDocument.AsyncLoad(url)
             let links = 
