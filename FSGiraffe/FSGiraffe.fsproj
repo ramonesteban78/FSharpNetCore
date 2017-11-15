@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
+    <DebugType>portable</DebugType>
+    <AssemblyName>FSGiraffe</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>FSGiraffe</PackageId>
+    <RuntimeFrameworkVersion>2.0.0</RuntimeFrameworkVersion>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+  </PropertyGroup>
+  <Import Project="..\fsc.props" />
+  <ItemGroup>
+    <Watch Include="Views\Index.cshtml" />
+    <Content Include="Views\*.cshtml;WebRoot\**\*" Exclude="Views\Index.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Models\Message.fs" />
+    <Compile Include="Models\*.fs" />
+    <Compile Include="Program.fs" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.1" />
+    <PackageReference Include="Giraffe" Version="0.1.0-beta-200" />
+    <ProjectReference Include="..\FSLibrary\FSLibrary.fsproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.1" />
+    <PackageReference Include="Giraffe.Razor" Version="0.1.0-beta-100" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.0.1" />
+    <Watch Include="**\*.cshtml" Exclude="bin\**\*" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.1" />
+  </ItemGroup>
+</Project>
