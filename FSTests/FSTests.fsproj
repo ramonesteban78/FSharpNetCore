@@ -9,7 +9,6 @@
   <Import Project="..\fsc.props" />
   <ItemGroup>
     <Compile Include="Tests.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
